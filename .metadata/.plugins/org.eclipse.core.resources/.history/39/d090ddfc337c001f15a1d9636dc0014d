@@ -1,0 +1,53 @@
+package boardgame;
+
+public class Board {
+	
+	private int rows;
+	private int columns;
+	private Piece[][] pieces;
+	
+	
+	public Board(int rows, int columns) {
+		if(rows< 1 || columns<1) {
+		throw new BoardException("Erro criando tabuleiro é necessario que tenha pelo menos uma linha e uma coluna. ");
+		}
+		this.rows = rows;
+		this.columns = columns;
+		pieces = new Piece[rows][columns];
+	}
+
+
+	public int getRows() {
+		return rows;
+	}
+
+	public int getColumns() {
+		return columns;
+	}
+
+
+	public Piece piece(int row, int column) {
+		return pieces[row][column];
+	}
+	
+	public Piece piece(Position position) {
+		return pieces[position.getRows()][position.getColumn()];
+		
+	}	
+	
+	public void placePiece(Piece piece, Position position) {
+		pieces[position.getRows()][position.getColumn()] = piece;
+		piece.position =  position;
+	}
+	private boolean positioExists(int row, int column) {
+		return row >= 0 && row < rows && column >= 0 && column<columns;
+		
+	}
+	private boolean positioExists(Position position) {
+		return positioExists(position.getRows(), position.getColumn());
+	}
+	public boolean theresIsAPiece(Position position) {
+		return piece(position) !=null;
+		
+	}
+}
