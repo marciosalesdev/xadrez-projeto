@@ -7,7 +7,7 @@ public class Position {
 	
 	
 	
-	public int getRows() {
+	public int getRow() {
 		return row;
 	}
 
