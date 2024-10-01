@@ -20,7 +20,7 @@ public class Programa {
 		while (true) {
 			try {
 
-				UI.printBoard(chesMatch.getPieces());
+				UI.printMacth(chesMatch);
 				System.out.println();
 				System.out.print("Source: ");
 				ChessPosition source = UI.readChessPosition(sc);
