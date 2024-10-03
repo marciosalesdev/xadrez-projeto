@@ -20,7 +20,7 @@ public class Programa {
 		List<ChessPiece> captured = new ArrayList<>();
 		UI.printBoard(chesMatch.getPieces());
 
-		while (true) {
+		while (!chesMatch.getCheckMate()) {
 			try {
 				UI.clearScreen();
 				UI.printMacth(chesMatch, captured);
@@ -52,5 +52,7 @@ public class Programa {
 			}
 
 		}
+		UI.clearScreen();
+		UI.printMacth(chesMatch, captured);
 	}
 }
